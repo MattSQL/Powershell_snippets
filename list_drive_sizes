@@ -1,0 +1,1 @@
+Get-WmiObject Win32_LogicalDisk -ComputerName BI2.TRADEME.LOCAL | select-object DeviceID, Size,Freespace | % {$_.FreeSpace=($_.FreeSpace/1GB);$_.Size=($_.Size/1GB);$_} > C:\drives.txt
